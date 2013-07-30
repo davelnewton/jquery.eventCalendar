@@ -327,8 +327,8 @@ $.fn.eventCalendar = function (options) {
                             if (month === false && eventDate < new Date()) {
 
                             } else {
-                                eventStringDate = eventDay + "/" + eventMonthToShow + "/" + eventYear;
-
+                                eventStringDate = eventMonthToShow + '/' + eventDay + '/' + eventYear;
+                                
                                 if (event.url) {
                                     var eventTitle = '<a href="' + event.url + '" target="' + eventLinkTarget + '" class="eventTitle">' + event.title + '</a>';
                                 } else {
@@ -414,6 +414,7 @@ $.fn.eventCalendar.defaults = {
     txt_prev: "prev",
     txt_NextEvents: "Next events:",
     txt_GoToEventUrl: "See the event",
+    fmt_eventDate: 'yyyy-MM-dd', // TODO Currently unused pending date formatting library choice.
     showDayAsWeeks: true,
     startWeekOnMonday: true,
     showDayNameInCalendar: true,
@@ -422,9 +423,9 @@ $.fn.eventCalendar.defaults = {
     openEventInNewWindow: false,
     eventsScrollable: false,
     jsonDateFormat: 'timestamp', // you can use also "human" 'YYYY-MM-DD HH:MM:SS'
-    moveSpeed: 500,	// speed of month move when you clic on a new date
+    moveSpeed: 500,    // speed of month move when you clic on a new date
     moveOpacity: 0.15, // month and events fadeOut to this opacity
-    jsonData: "", 	// to load and inline json (not ajax calls)
-    cacheJson: true	// if true plugin get a json only first time and after plugin filter events
-                    // if false plugin get a new json on each date change
+    jsonData: "",      // to load and inline json (not ajax calls)
+    cacheJson: true    // if true plugin get a json only first time and after plugin filter events
+                       // if false plugin get a new json on each date change
 };
